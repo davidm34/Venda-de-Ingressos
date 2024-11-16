@@ -14,8 +14,8 @@ import java.util.UUID;
  */
 public class Usuario {
     private String login;
-    private String senha;
     private String nome;
+    private String senha;
     private String cpf;
     private String email;
     private Boolean isadmin;
@@ -26,39 +26,19 @@ public class Usuario {
     List<Ingresso> ingressos = new ArrayList<>();
 
     /**
-     * Construtor para criar um novo usuário com as informações fornecidas.
-     *
-     * @param login O login do usuário.
-     * @param senha A senha do usuário.
-     * @param nome O nome do usuário.
-     * @param cpf O CPF do usuário.
-     * @param email O email do usuário.
-     * @param isadmin Indica se o usuário tem privilégios de administrador.
-     */
-    public Usuario(String login, String senha, String nome, String cpf, String email, Boolean isadmin) {
-        this.login = login;
-        this.senha = senha;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.isadmin = isadmin;
-    }
-
-    /**
      * Construtor para criar um novo usuário com um ID.
      *
-     * @param login O login do usuário.
-     * @param senha A senha do usuário.
      * @param nome O nome do usuário.
+     * @param senha A senha do usuário.
      * @param cpf O CPF do usuário.
      * @param email O email do usuário.
      * @param isadmin Indica se o usuário tem privilégios de administrador.
      * @param id O ID do usuário.
      */
-    public Usuario(String login, String senha, String nome, String cpf, String email, Boolean isadmin, String id) {
-        this.login = login;
-        this.senha = senha;
+
+    public Usuario(String nome, String senha, String cpf, String email, Boolean isadmin, String id) {
         this.nome = nome;
+        this.senha = senha;
         this.cpf = cpf;
         this.email = email;
         this.isadmin = isadmin;
@@ -151,10 +131,4 @@ public class Usuario {
         return Objects.hash(login, cpf, email);
     }
 
-    public static void main(String[] args) throws IOException {
-        UsuarioManager usuarioManager = new UsuarioManager();
-        UUID uuid = UUID.randomUUID();
-        String id = String.valueOf(uuid);
-        usuarioManager.adicionarUsuarioNoArquivo("Alex123", "alex123", "Alex", "24439434", "alexcabeca@gmail.com", false, id);
-    }
 }

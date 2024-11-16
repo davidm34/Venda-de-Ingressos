@@ -52,9 +52,8 @@ public class UsuarioManager {
     /**
      * Adiciona um novo usuário ao arquivo JSON.
      *
-     * @param login O login do usuário.
-     * @param password A senha do usuário.
      * @param name O nome do usuário.
+     * @param password A senha do usuário.
      * @param cpf O CPF do usuário.
      * @param email O email do usuário.
      * @param isAdmin Indica se o usuário é um administrador.
@@ -62,8 +61,8 @@ public class UsuarioManager {
      * @return true se o usuário foi adicionado com sucesso.
      * @throws IOException Se ocorrer um erro ao escrever no arquivo.
      */
-    public boolean adicionarUsuarioNoArquivo(String login, String password, String name, String cpf, String email, Boolean isAdmin, String id) throws IOException {
-        Usuario usuario = new Usuario(login, password, name, cpf, email, isAdmin, id);
+    public boolean adicionarUsuarioNoArquivo(String name, String password, String cpf, String email, Boolean isAdmin, String id) throws IOException {
+        Usuario usuario = new Usuario(name, password, cpf, email, isAdmin, id);
         lerConteudoArquivo();
         listausuario.add(usuario);
         String jsonUsuarios = new Gson().toJson(listausuario);

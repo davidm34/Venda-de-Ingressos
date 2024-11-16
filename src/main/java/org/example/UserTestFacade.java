@@ -40,7 +40,7 @@ public class UserTestFacade {
         // Gera um ID para o novo usuário
         UUID uuid = UUID.randomUUID();
         String id = String.valueOf(uuid);
-        return usuarioManager.adicionarUsuarioNoArquivo(login, password, name, cpf, email, isAdmin, id);
+        return usuarioManager.adicionarUsuarioNoArquivo(name, password, cpf, email, isAdmin, id);
     }
 
     public boolean validateLogin(String email, String password) throws IOException {

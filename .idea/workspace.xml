@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="" />
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UsuarioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UsuarioManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +26,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,12 +54,16 @@
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
     "Application.LoginApp.executor": "Run",
+    "Application.LoginApplication.executor": "Run",
+    "Application.RegisterApplication.executor": "Run",
     "Application.Usuario.executor": "Run",
     "Application.org.example.HelloApplication.executor": "Run",
     "Application.org.example.Usuario.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/david/OneDrive/Documentos/main/main/src/main/resources/org/example",
     "last_opened_file_path": "C:/Users/david/OneDrive/Documentos/main/main/src/main/lib/javafx-sdk-23.0.1/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -51,7 +71,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.org.example.HelloApplication">
+  <component name="RunManager" selected="Application.RegisterApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.main.HelloApplication" />
       <module name="main" />
@@ -65,12 +85,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.main.LoginApp" />
+    <configuration name="LoginApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.LoginApplication" />
       <module name="main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.main.*" />
+          <option name="PATTERN" value="vendaingressos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.RegisterApplication" />
+      <module name="main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,19 +117,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.vendaingressos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="org.example.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.HelloApplication" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="vendaingressos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.example.HelloApplication" />
+        <item itemvalue="Application.RegisterApplication" />
+        <item itemvalue="Application.LoginApplication" />
         <item itemvalue="Application.vendaingressos.Usuario" />
         <item itemvalue="Application.Usuario" />
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.LoginApp" />
       </list>
     </recent_temporary>
   </component>

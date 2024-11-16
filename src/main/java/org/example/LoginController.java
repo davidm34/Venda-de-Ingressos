@@ -1,18 +1,14 @@
 package org.example;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.List;
 
-public class HelloController {
+public class LoginController {
 
     @FXML
     private TextField enterPasswordField;
