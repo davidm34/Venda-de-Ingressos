@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.main.ListOfEvents"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LoginController">
+    <left>
+        <AnchorPane prefHeight="407.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="308.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image4.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="334.0" prefWidth="410.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="loginButton" layoutX="296.0" layoutY="75.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #e9d656;" text="Comprar Ingresso">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Text layoutX="149.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos Disponíveis">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+            <ImageView fitHeight="76.0" fitWidth="73.0" layoutX="34.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../evento_teatro.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="149.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peça de Teatro" />
+            <ImageView fitHeight="76.0" fitWidth="73.0" layoutX="34.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../evento_rock.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="149.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show de Rock" />
+            <Button fx:id="loginButton1" layoutX="296.0" layoutY="165.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #e9d656;" text="Comprar Ingresso">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="76.0" fitWidth="73.0" layoutX="34.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../evento_formula.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="149.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Corrida de Fórmula 1" />
+            <Button fx:id="loginButton11" layoutX="296.0" layoutY="263.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #e9d656;" text="Comprar Ingresso">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

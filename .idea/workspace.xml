@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="adicionado Menu de Cadastro">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
