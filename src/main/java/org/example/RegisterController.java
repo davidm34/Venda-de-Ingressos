@@ -40,6 +40,7 @@ public class RegisterController {
         } else {
             System.out.println("Usuario não Registrado");
         }
+        RegisterApplication.changeScreen(register);
     }
 
 }
