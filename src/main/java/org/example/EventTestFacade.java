@@ -60,17 +60,16 @@ public class EventTestFacade {
     /**
      * Cria um novo evento e o adiciona ao sistema.
      *
-     * @param loginAdmin O login do administrador que cria o evento.
      * @param name O nome do evento.
      * @param description A descrição do evento.
      * @param date A data do evento.
      * @return O ID do novo evento criado.
      * @throws IOException Se ocorrer um erro ao acessar os arquivos.
      */
-    public String create(String loginAdmin, String name, String description, Date date) throws IOException {
+    public String create(String name, String description, Date date) throws IOException {
         UUID uuid = UUID.randomUUID();
         String id = String.valueOf(uuid);
-        Evento evento = new Evento(loginAdmin, name, description, date, id);
+        Evento evento = new Evento(name, description, date, id);
         EventoManager eventoManager = new EventoManager();
         eventoManager.adicionarEventoNoArquivo(evento);
         return id;
