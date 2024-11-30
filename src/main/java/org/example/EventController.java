@@ -1,5 +1,4 @@
 package org.example;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,7 +7,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.util.Callback;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,6 +14,12 @@ public class EventController {
 
     @FXML
     private TableView<Evento> tableEvent;
+
+    private BuyController buyController;
+
+    public void setBuyController(BuyController buyController){
+        this.buyController = buyController;
+    }
 
     @FXML
     private TableColumn<Evento, String> nameEvent;
@@ -33,7 +37,6 @@ public class EventController {
 
     @FXML
     public void initialize() {
-        // Configurar as colunas
         nameEvent.setCellValueFactory(cellData ->
                 new javafx.beans.property.SimpleStringProperty(cellData.getValue().getNome()));
 
@@ -43,7 +46,6 @@ public class EventController {
         categoryEvent.setCellValueFactory(cellData ->
                 new javafx.beans.property.SimpleStringProperty(cellData.getValue().getDescricao()));
 
-        // Adicionar dados
         eventos = FXCollections.observableArrayList(
                 new Evento("Show de Rock", "Show ao Vivo", new Date(1734624000000L), "1"), // 20/12/2024
                 new Evento("Feira de Tecnologia", "Exposição", new Date(1734710400000L), "2"), // 21/12/2024
@@ -63,32 +65,36 @@ public class EventController {
         adicionarColunaDeBotao();
     }
 
-    // Formatar a data para exibição
     private String formatarData(Date data) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(data);
     }
 
-    // Método para adicionar a coluna de ações
-    private void adicionarColunaDeBotao() {
+    void adicionarColunaDeBotao() {
         buyEvent = new TableColumn<>("COMPRAR");
 
         Callback<TableColumn<Evento, Void>, TableCell<Evento, Void>> cellFactory = new Callback<>() {
             @Override
             public TableCell<Evento, Void> call(final TableColumn<Evento, Void> param) {
                 return new TableCell<>() {
-
                     private final Button btn = new Button("Comprar");
 
                     {
-                        // Aqui você pode adicionar a lógica do botão
                         btn.setOnAction(event -> {
+                            System.out.println("Chegou aqui");
                             Evento evento = getTableView().getItems().get(getIndex());
-                            System.out.println("Botão clicado para o evento: " + evento.getNome());
-                        });
-                    }
 
-                    @Override
+                            // Use a instância correta do controlador
+                            if (buyController != null) {
+                                buyController.addEventToTicket(evento);
+                                EventApplication.changeScreen(true);
+                            } else {
+                                System.err.println("Erro: controlador não configurado.");
+                            }
+                    });
+                }
+
+                @Override
                     protected void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
                         if (empty) {
@@ -104,6 +110,8 @@ public class EventController {
         buyEvent.setCellFactory(cellFactory);
         tableEvent.getColumns().add(buyEvent);
     }
+
+
 
 }
 

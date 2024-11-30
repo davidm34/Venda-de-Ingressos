@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="520.0" style="-fx-background-color: #f0eccc;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.BuyController">
+    <left>
+        <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="344.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../CompraDeIngresso.png" />
+                    </image>
+                </ImageView>
+            <Text fx:id="nameEvent" layoutX="92.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="dateEvent" layoutX="94.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="334.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="loginButton" layoutX="21.0" layoutY="209.0" mnemonicParsing="false" onAction="#buyTicketClick" prefHeight="32.0" prefWidth="254.0" style="-fx-background-color: #e9d656;" text="Comprar">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
