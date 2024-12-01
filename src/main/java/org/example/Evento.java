@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -70,6 +71,11 @@ public class Evento {
      */
     public Date getData(){
         return data;
+    }
+
+    public String formatDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data);
     }
 
     public boolean isAtivo(){

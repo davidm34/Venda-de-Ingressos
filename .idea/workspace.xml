@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="criação da página de compra de ingresso e integração com a pagina de listagem de eventos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732980229797</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="criação da página de compra de ingresso e integração com a pagina de listagem de eventos">
+      <option name="closed" value="true" />
+      <created>1733060127290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733060127290</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

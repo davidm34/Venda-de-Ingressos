@@ -81,12 +81,11 @@ public class EventController {
 
                     {
                         btn.setOnAction(event -> {
-                            System.out.println("Chegou aqui");
                             Evento evento = getTableView().getItems().get(getIndex());
 
                             // Use a instância correta do controlador
                             if (buyController != null) {
-                                buyController.addEventToTicket(evento);
+                                buyController.start(evento);
                                 EventApplication.changeScreen(true);
                             } else {
                                 System.err.println("Erro: controlador não configurado.");
