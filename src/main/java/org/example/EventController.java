@@ -86,7 +86,7 @@ public class EventController {
                             // Use a instância correta do controlador
                             if (buyController != null) {
                                 buyController.start(evento);
-                                EventApplication.changeScreen(true);
+                                ControllerScreens.removeScene();
                             } else {
                                 System.err.println("Erro: controlador não configurado.");
                             }

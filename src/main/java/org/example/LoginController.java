@@ -21,11 +21,18 @@ public class LoginController {
 
     private static final String USERS_FILE = "usuarios.json";
 
+    private ControllerScreens controllerScreens;
+
+    public void setControllerScreens(ControllerScreens controllerScreens) {
+        this.controllerScreens = controllerScreens;
+    }
+
     public void onHelloButtonClick(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText();
         String password = enterPasswordField.getText();
         if (validateLogin(username, password)) {
             System.out.println("Login bem-sucedido!");
+            controllerScreens.removeScene();
         } else {
             System.out.println("Usuário ou senha inválidos.");
         }

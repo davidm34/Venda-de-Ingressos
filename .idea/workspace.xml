@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="criação da página de compra de ingresso e integração com a pagina de listagem de eventos">
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="finalização da tela de ingresso">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,29 +44,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.EventApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RegisterApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Usuario.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.Usuario.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/david/OneDrive/Documentos/main/main/src/main/resources/org/example&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/OneDrive/Documentos/main/main/src/main/lib/javafx-sdk-23.0.1/lib/javafx.web.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ControllerScreens.executor": "Run",
+    "Application.EventApplication.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.LoginApp.executor": "Run",
+    "Application.LoginApplication.executor": "Run",
+    "Application.RegisterApplication.executor": "Run",
+    "Application.Usuario.executor": "Run",
+    "Application.org.example.HelloApplication.executor": "Run",
+    "Application.org.example.Usuario.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/david/OneDrive/Documentos/main/main/src/main/resources/org/example",
+    "last_opened_file_path": "C:/Users/david/OneDrive/Documentos/main/main/src/main/lib/javafx-sdk-23.0.1/lib/javafx.web.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Application.EventApplication">
+}]]></component>
+  <component name="RunManager" selected="Application.ControllerScreens">
+    <configuration name="ControllerScreens" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.ControllerScreens" />
+      <module name="main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EventApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.EventApplication" />
       <module name="main" />
@@ -106,19 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Usuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.vendaingressos.Usuario" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.vendaingressos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="vendaingressos.Usuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vendaingressos.Usuario" />
       <module name="main" />
@@ -134,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EventApplication" />
+        <item itemvalue="Application.ControllerScreens" />
         <item itemvalue="Application.RegisterApplication" />
+        <item itemvalue="Application.EventApplication" />
         <item itemvalue="Application.LoginApplication" />
         <item itemvalue="Application.vendaingressos.Usuario" />
-        <item itemvalue="Application.Usuario" />
       </list>
     </recent_temporary>
   </component>
@@ -190,13 +191,22 @@
       <option name="project" value="LOCAL" />
       <updated>1733060127290</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finalização da tela de ingresso">
+      <option name="closed" value="true" />
+      <created>1733072696387</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733072696388</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adicionado Menu de Cadastro" />
     <MESSAGE value="criação da pagina de evento" />
     <MESSAGE value="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
+    <MESSAGE value="finalização da tela de ingresso" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalização da tela de ingresso" />
   </component>
 </project>

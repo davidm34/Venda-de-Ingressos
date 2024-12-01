@@ -25,6 +25,13 @@ public class RegisterController {
     @FXML
     private TextField emailTextField;
 
+    private ControllerScreens controllerScreens;
+
+    public void setControllerScreens(ControllerScreens controllerScreens) {
+        this.controllerScreens = controllerScreens;
+    }
+
+
     @FXML
     void onHelloButtonClick(ActionEvent event) throws IOException {
         UsuarioManager usuarioManager = new UsuarioManager();
@@ -40,7 +47,7 @@ public class RegisterController {
         } else {
             System.out.println("Usuario não Registrado");
         }
-        RegisterApplication.changeScreen(register);
+        ControllerScreens.removeScene();
     }
 
 }
