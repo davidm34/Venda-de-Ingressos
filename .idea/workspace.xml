@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="criação da pagina de evento">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CompraDeIngresso.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/evento_formula.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/evento_rock.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/evento_teatro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
-    </list>
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,12 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1732399519488</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="criação da página de compra de ingresso e integração com a pagina de listagem de eventos">
+      <option name="closed" value="true" />
+      <created>1732980229797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732980229797</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adicionado Menu de Cadastro" />
     <MESSAGE value="criação da pagina de evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação da pagina de evento" />
+    <MESSAGE value="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
+    <option name="LAST_COMMIT_MESSAGE" value="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
   </component>
 </project>
