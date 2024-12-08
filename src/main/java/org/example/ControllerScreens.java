@@ -22,12 +22,6 @@ public class ControllerScreens extends Application {
 
     private static Stack<Scene> scenes = new Stack<>();
 
-    private ControllerScreens controllerScreens;
-
-    public void setControllerScreens(ControllerScreens controllerScreens) {
-        this.controllerScreens = controllerScreens;
-    }
-
     @Override
     public void start(Stage stage) throws IOException {
         ControllerScreens.stage = stage; // Atribuir o Stage à variável estática.
@@ -36,7 +30,7 @@ public class ControllerScreens extends Application {
 
         // Carregar a Tela de Registro
         FXMLLoader fxmlLoader1 = new FXMLLoader(RegisterApplication.class.getResource("/org/example/main/register.fxml"));
-        sceneRegister = new Scene(fxmlLoader1.load(), 520, 344);
+        sceneRegister = new Scene(fxmlLoader1.load(), 566, 376);
         RegisterController registerController = fxmlLoader1.getController();
         registerController.setControllerScreens(this); // Passa a instância atual
 

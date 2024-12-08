@@ -10,11 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="520.0" style="-fx-background-color: #f0eccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BuyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="566.0" style="-fx-background-color: #f0eccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BuyController">
     <left>
         <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="344.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="376.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../CompraDeIngresso.png" />
                     </image>
@@ -35,7 +35,7 @@
     <center>
         <AnchorPane prefHeight="334.0" prefWidth="332.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="loginButton" layoutX="21.0" layoutY="209.0" mnemonicParsing="false" onAction="#buyTicketClick" prefHeight="32.0" prefWidth="254.0" style="-fx-background-color: #e9d656;" text="Comprar">
+                <Button fx:id="loginButton" layoutX="31.0" layoutY="188.0" mnemonicParsing="false" onAction="#buyTicketClick" prefHeight="32.0" prefWidth="254.0" style="-fx-background-color: #e9d656;" text="Comprar">
                     <font>
                         <Font size="14.0" />
                     </font>
