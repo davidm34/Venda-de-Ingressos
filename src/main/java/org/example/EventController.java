@@ -87,8 +87,6 @@ public class EventController {
                             if (buyController != null) {
                                 buyController.start(evento);
                                 ControllerScreens.removeScene();
-                            } else {
-                                System.err.println("Erro: controlador não configurado.");
                             }
                     });
                 }
