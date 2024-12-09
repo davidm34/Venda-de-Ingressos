@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas">
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="lista de usuarios vazia">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Assento.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AssentoManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Avaliacao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AvaliacaoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Card.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardTestFacade.java" beforeDir="false" />
@@ -18,14 +20,21 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CompraManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventTestFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Evento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IngressoManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PurchaseTestFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UsuarioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UsuarioManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +203,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733709040706</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="mudança no titulo">
+      <option name="closed" value="true" />
+      <created>1733749916285</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733749916285</updated>
+    </task>
+    <task id="LOCAL-00011" summary="lista de usuarios vazia">
+      <option name="closed" value="true" />
+      <created>1733749961805</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733749961805</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,6 +231,8 @@
     <MESSAGE value="integração de todas as telas" />
     <MESSAGE value="adicionando duas linguagens na tela de cadastro e login" />
     <MESSAGE value="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas" />
-    <option name="LAST_COMMIT_MESSAGE" value="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas" />
+    <MESSAGE value="mudança no titulo" />
+    <MESSAGE value="lista de usuarios vazia" />
+    <option name="LAST_COMMIT_MESSAGE" value="lista de usuarios vazia" />
   </component>
 </project>

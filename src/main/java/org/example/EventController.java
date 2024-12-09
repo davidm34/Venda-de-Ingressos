@@ -10,36 +10,51 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador responsável pela tela de listagem de eventos.
+ * Gerencia a exibição dos eventos disponíveis e permite que o usuário selecione um evento para compra de ingressos.
+ *
+ * @author David Neves Dias
+ */
 public class EventController {
 
     @FXML
-    private TableView<Evento> tableEvent;
+    private TableView<Evento> tableEvent; // Tabela que exibe os eventos disponíveis.
 
-    private BuyController buyController;
+    @FXML
+    private TableColumn<Evento, String> nameEvent; // Coluna que exibe o nome do evento.
 
+    @FXML
+    private TableColumn<Evento, String> categoryEvent; // Coluna que exibe a categoria do evento.
+
+    @FXML
+    private TableColumn<Evento, String> dateEvent; // Coluna que exibe a data do evento.
+
+    @FXML
+    private TableColumn<Evento, Void> buyEvent; // Coluna com botão para comprar ingressos.
+
+    @FXML
+    private ComboBox<String> languageComboBox; // ComboBox para seleção do idioma.
+
+    private BuyController buyController; // Controlador responsável pela tela de compra.
+
+    private ObservableList<Evento> eventos; // Lista de eventos exibida na tabela.
+
+    private ResourceBundle bundle; // Bundle de recursos para gerenciamento de textos internacionalizados.
+
+    /**
+     * Define o controlador responsável pela tela de compra.
+     *
+     * @param buyController Instância do controlador de compra.
+     */
     public void setBuyController(BuyController buyController) {
         this.buyController = buyController;
     }
 
-    @FXML
-    private TableColumn<Evento, String> nameEvent;
-
-    @FXML
-    private TableColumn<Evento, String> categoryEvent;
-
-    @FXML
-    private TableColumn<Evento, String> dateEvent;
-
-    @FXML
-    private TableColumn<Evento, Void> buyEvent;
-
-    @FXML
-    private ComboBox<String> languageComboBox;
-
-    private ObservableList<Evento> eventos;
-
-    private ResourceBundle bundle;
-
+    /**
+     * Inicializa os componentes da interface.
+     * Configura a tabela, o idioma padrão e os textos da interface.
+     */
     @FXML
     public void initialize() {
         // Inicializa o idioma padrão (Português)
@@ -75,29 +90,40 @@ public class EventController {
         categoryEvent.setCellValueFactory(cellData ->
                 new javafx.beans.property.SimpleStringProperty(cellData.getValue().getDescricao()));
 
-        // Preenche a lista de eventos (inicialmente com os dados no idioma configurado)
+        // Preenche a lista de eventos
         atualizarEventos();
         tableEvent.setItems(eventos);
+
+        // Adiciona a coluna de botão
         adicionarColunaDeBotao();
     }
 
+    /**
+     * Formata uma data para o padrão "dd/MM/yyyy".
+     *
+     * @param data A data a ser formatada.
+     * @return String representando a data formatada.
+     */
     private String formatarData(Date data) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(data);
     }
 
+    /**
+     * Adiciona a coluna de botão para compra de ingressos na tabela de eventos.
+     */
     public void adicionarColunaDeBotao() {
         // Remover coluna antiga, se existir
         tableEvent.getColumns().remove(buyEvent);
 
         // Cria nova coluna com o texto atualizado
-        buyEvent = new TableColumn<>(bundle.getString("coluna.comprar"));  // Traduz o título da coluna de comprar
+        buyEvent = new TableColumn<>(bundle.getString("coluna.comprar")); // Traduz o título da coluna de comprar
 
         Callback<TableColumn<Evento, Void>, TableCell<Evento, Void>> cellFactory = new Callback<>() {
             @Override
             public TableCell<Evento, Void> call(final TableColumn<Evento, Void> param) {
                 return new TableCell<>() {
-                    private final Button btn = new Button(bundle.getString("botao.comprar"));  // Traduz o texto do botão
+                    private final Button btn = new Button(bundle.getString("botao.comprar")); // Traduz o texto do botão
 
                     {
                         btn.setOnAction(event -> {
@@ -129,31 +155,38 @@ public class EventController {
         tableEvent.getColumns().add(buyEvent); // Adiciona a nova coluna ao TableView
     }
 
-
+    /**
+     * Atualiza o idioma da interface.
+     *
+     * @param newLocale O novo Locale a ser utilizado.
+     */
     private void atualizarIdioma(Locale newLocale) {
         // Atualiza o ResourceBundle para o novo idioma
         bundle = ResourceBundle.getBundle("lang", newLocale);
 
-        // Atualiza os textos de interface com base no novo idioma
+        // Atualiza os textos de interface
         atualizarTextos();
 
-        // Atualiza os eventos com os novos textos
+        // Atualiza os eventos
         atualizarEventos();
 
         // Recria a coluna de botão com o novo idioma
         adicionarColunaDeBotao();
     }
 
-
+    /**
+     * Atualiza os textos exibidos na interface com base no idioma atual.
+     */
     private void atualizarTextos() {
-        // Atualiza os textos dos labels e outras partes da interface
         nameEvent.setText(bundle.getString("label.nome"));
         categoryEvent.setText(bundle.getString("label.categoria"));
         dateEvent.setText(bundle.getString("label.data"));
     }
 
+    /**
+     * Atualiza a lista de eventos com base no idioma atual.
+     */
     private void atualizarEventos() {
-        // Recria a lista de eventos com base no idioma atual
         eventos = FXCollections.observableArrayList(
                 new Evento(bundle.getString("evento.show_rock"), bundle.getString("evento.show_ao_vivo"), new Date(1734624000000L), "1"),
                 new Evento(bundle.getString("evento.feira_tecnologia"), bundle.getString("evento.exposicao"), new Date(1734710400000L), "2"),

@@ -1,6 +1,4 @@
 package org.example;
-
-
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -73,14 +71,13 @@ public class Evento {
         return data;
     }
 
+    /**
+     * Obtém a data do evento como String.
+     * @return A data formata em String.
+     */
     public String formatDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(data);
-    }
-
-    public boolean isAtivo(){
-        Date data_atual = new Date();
-        return data.after(data_atual);
     }
 
 }

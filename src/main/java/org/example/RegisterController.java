@@ -1,4 +1,5 @@
 package org.example;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,11 +7,18 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
+/**
+ * Controlador responsável pela lógica da tela de registro de usuários.
+ * Garante validações de campos e interação com o sistema de persistência.
+ *
+ * @author David Neves Dias
+ */
 public class RegisterController {
 
     @FXML
@@ -55,31 +63,38 @@ public class RegisterController {
     @FXML
     private ComboBox<String> languageComboBox;
 
+    @FXML
+    private Button registerBottom;
+
     private ControllerScreens controllerScreens;
 
     private ResourceBundle bundle;
 
-    @FXML
-    private Button registerBottom;
-
+    /**
+     * Configura o controlador de telas para alternância entre diferentes cenas.
+     *
+     * @param controllerScreens O controlador de telas.
+     */
     public void setControllerScreens(ControllerScreens controllerScreens) {
         this.controllerScreens = controllerScreens;
     }
 
+    /**
+     * Inicializa os componentes da interface gráfica e configura o idioma padrão.
+     */
     @FXML
     public void initialize() {
-        // Configuração inicial do ComboBox de idiomas
+        configureLanguageComboBox();
+        clearErrorMessages();
+        updateLanguage("pt", "BR");
+    }
+
+    /**
+     * Configura as opções de idioma no ComboBox.
+     */
+    private void configureLanguageComboBox() {
         languageComboBox.getItems().addAll("Português", "English");
         languageComboBox.setValue("Português");
-        updateLanguage("pt", "BR");
-
-        // Inicializar textos de erro como vazios
-        cpfNotFilledIn.setText("");
-        emailNotFilledIn.setText("");
-        nameNotFilledIn.setText("");
-        passwordNotFilledIn.setText("");
-
-        // Configurar ação do ComboBox
         languageComboBox.setOnAction(event -> {
             String selectedLanguage = languageComboBox.getValue();
             if ("Português".equals(selectedLanguage)) {
@@ -90,33 +105,51 @@ public class RegisterController {
         });
     }
 
+    /**
+     * Atualiza os textos exibidos na interface com base no idioma selecionado.
+     *
+     * @param language O código do idioma.
+     * @param country  O código do país.
+     */
     private void updateLanguage(String language, String country) {
         Locale locale = new Locale(language, country);
         bundle = ResourceBundle.getBundle("lang", locale);
 
-        // Atualizar os textos da interface
-        cpfNotFilledIn.setText(bundle.getString("error.cpfNotFilledIn"));
-        emailNotFilledIn.setText(bundle.getString("error.emailNotFilledIn"));
-        nameNotFilledIn.setText(bundle.getString("error.nameNotFilledIn"));
-        passwordNotFilledIn.setText(bundle.getString("error.passwordNotFilledIn"));
-
-        // Atualizar os textos de especificação de campo
-        nameId.setText(bundle.getString("label.nameId"));
-        emailId.setText(bundle.getString("label.emailId"));
+        // Atualizar textos da interface
         cpfId.setText(bundle.getString("label.cpfId"));
+        emailId.setText(bundle.getString("label.emailId"));
+        nameId.setText(bundle.getString("label.nameId"));
         passwordId.setText(bundle.getString("label.passwordId"));
-
-        // Atualizar placeholders dos campos de texto
-        nameTextField.setPromptText(bundle.getString("placeholder.name"));
-        enterPasswordField.setPromptText(bundle.getString("placeholder.password"));
-        cpfTextField.setPromptText(bundle.getString("placeholder.cpf"));
-        emailTextField.setPromptText(bundle.getString("placeholder.email"));
-
-        // Atualizar textos de botões
         loginButton.setText(bundle.getString("button.login"));
         registerBottom.setText(bundle.getString("button.register"));
+
+        // Atualizar placeholders
+        cpfTextField.setPromptText(bundle.getString("placeholder.cpf"));
+        emailTextField.setPromptText(bundle.getString("placeholder.email"));
+        nameTextField.setPromptText(bundle.getString("placeholder.name"));
+        enterPasswordField.setPromptText(bundle.getString("placeholder.password"));
+
+        // Limpar mensagens de erro
+        clearErrorMessages();
     }
 
+    /**
+     * Limpa todas as mensagens de erro exibidas na interface.
+     */
+    private void clearErrorMessages() {
+        cpfNotFilledIn.setText("");
+        emailNotFilledIn.setText("");
+        nameNotFilledIn.setText("");
+        passwordNotFilledIn.setText("");
+    }
+
+    /**
+     * Método chamado ao clicar no botão de registro.
+     * Valida os campos e registra o usuário se os dados forem válidos.
+     *
+     * @param event O evento acionado.
+     * @throws IOException Se houver erro na persistência de dados.
+     */
     @FXML
     void onHelloButtonClick(ActionEvent event) throws IOException {
         UsuarioManager usuarioManager = new UsuarioManager();
@@ -124,31 +157,33 @@ public class RegisterController {
         String password = enterPasswordField.getText();
         String cpf = cpfTextField.getText();
         String email = emailTextField.getText();
-        boolean check = checkIfThereIsNoEmptyField(name, password, cpf, email);
-        if (check) {
+
+        if (validateFields(name, password, cpf, email)) {
             UUID uuid = UUID.randomUUID();
-            String id = String.valueOf(uuid);
-            boolean register = usuarioManager.adicionarUsuarioNoArquivo(name, password, cpf, email, false, id);
-            if (register) {
-                ControllerScreens.removeScene();
+            String id = uuid.toString();
+            if (usuarioManager.adicionarUsuarioNoArquivo(name, password, cpf, email, false, id)) {
+                controllerScreens.removeScene();
             }
         }
     }
 
-
-    @FXML
-    void redirectLoginPage(ActionEvent event) {
-        ControllerScreens.removeScene();
-    }
-
-    public boolean checkIfThereIsNoEmptyField(String name, String password, String cpf, String email) {
+    /**
+     * Valida os campos de entrada e exibe mensagens de erro se necessário.
+     *
+     * @param name     Nome do usuário.
+     * @param password Senha do usuário.
+     * @param cpf      CPF do usuário.
+     * @param email    Email do usuário.
+     * @return true se todos os campos forem válidos, false caso contrário.
+     */
+    public boolean validateFields(String name, String password, String cpf, String email) {
         boolean allFieldsFilled = true;
 
         if (name == null || name.trim().isEmpty()) {
             nameNotFilledIn.setText(bundle.getString("error.nameNotFilledIn"));
             allFieldsFilled = false;
         } else {
-            nameNotFilledIn.setText(""); // Limpa o texto de erro
+            nameNotFilledIn.setText("");
         }
 
         if (password == null || password.trim().isEmpty()) {
@@ -173,5 +208,15 @@ public class RegisterController {
         }
 
         return allFieldsFilled;
+    }
+
+    /**
+     * Redireciona o usuário para a página de login.
+     *
+     * @param event O evento acionado.
+     */
+    @FXML
+    void redirectLoginPage(ActionEvent event) {
+        controllerScreens.removeScene();
     }
 }

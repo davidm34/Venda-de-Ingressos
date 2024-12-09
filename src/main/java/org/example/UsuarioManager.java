@@ -74,38 +74,6 @@ public class UsuarioManager {
     }
 
     /**
-     * Remove um usuário da lista pelo seu email.
-     *
-     * @param email O email do usuário a ser removido.
-     * @param usuarios A lista de usuários.
-     */
-    public void deletarUsuarioPorEmail(String email, List<Usuario> usuarios) {
-        for (int i = 0; i < usuarios.size(); i++) {
-            Usuario usuario = usuarios.get(i);
-            if (usuario.getEmail().equals(email)) {
-                usuarios.remove(i);
-                return;
-            }
-        }
-    }
-
-    /**
-     * Limpa o conteúdo do arquivo JSON, deixando uma lista vazia.
-     *
-     * @throws IOException Se ocorrer um erro ao escrever no arquivo.
-     */
-    public void limparArquivoJson() throws IOException {
-        try (FileWriter fileWriter = new FileWriter("usuarios.json")) {
-            fileWriter.write("[]"); // Escreve uma lista vazia no arquivo
-        }
-
-        if (listausuario == null) {
-            listausuario = new ArrayList<>(); // Inicializa a lista se estiver nula
-        }
-        listausuario.clear(); // Limpa a lista
-    }
-
-    /**
      * Salva a lista de usuários no arquivo JSON.
      *
      * @param usuarios A lista de usuários a ser salva.

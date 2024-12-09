@@ -13,6 +13,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para a tela de login.
+ * Gera interatividade com os elementos visuais e valida as credenciais do usuário.
+ *
+ * @author David Neves Dias
+ */
 public class LoginController {
 
     @FXML
@@ -58,10 +64,18 @@ public class LoginController {
 
     private ControllerScreens controllerScreens;
 
+    /**
+     * Define o controlador de navegação de telas.
+     *
+     * @param controllerScreens A instância do controlador de telas.
+     */
     public void setControllerScreens(ControllerScreens controllerScreens) {
         this.controllerScreens = controllerScreens;
     }
 
+    /**
+     * Inicializa os componentes da interface e configura o comportamento do ComboBox de idioma.
+     */
     @FXML
     public void initialize() {
         // Configurar opções de idiomas no ComboBox
@@ -86,6 +100,12 @@ public class LoginController {
         passwordNotFilledIn.setText("");
     }
 
+    /**
+     * Executa a validação das credenciais de login ao clicar no botão.
+     *
+     * @param actionEvent O evento associado ao clique do botão.
+     * @throws IOException Se ocorrer um erro ao validar credenciais.
+     */
     @FXML
     public void onHelloButtonClick(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText();
@@ -106,6 +126,14 @@ public class LoginController {
         }
     }
 
+    /**
+     * Valida as credenciais do usuário comparando-as com dados armazenados.
+     *
+     * @param email    O e-mail inserido.
+     * @param password A senha inserida.
+     * @return {@code true} se as credenciais forem válidas, {@code false} caso contrário.
+     * @throws IOException Se ocorrer um erro ao ler os dados.
+     */
     private boolean validateLogin(String email, String password) throws IOException {
         UsuarioManager usuarioManager = new UsuarioManager();
         List<Usuario> usuarios = usuarioManager.lerConteudoArquivo();
@@ -118,6 +146,13 @@ public class LoginController {
         return false;
     }
 
+    /**
+     * Verifica se os campos obrigatórios foram preenchidos.
+     *
+     * @param email    O e-mail inserido.
+     * @param password A senha inserida.
+     * @return {@code true} se todos os campos forem preenchidos, {@code false} caso contrário.
+     */
     private boolean checkIfThereIsNoEmptyField(String email, String password) {
         boolean allFieldsFilled = true;
 
@@ -138,6 +173,12 @@ public class LoginController {
         return allFieldsFilled;
     }
 
+    /**
+     * Atualiza o idioma da interface com base no código de idioma e país fornecidos.
+     *
+     * @param language O código do idioma (e.g., "pt").
+     * @param country  O código do país (e.g., "BR").
+     */
     private void updateLanguage(String language, String country) {
         Locale locale = new Locale(language, country);
         bundle = ResourceBundle.getBundle("lang", locale);

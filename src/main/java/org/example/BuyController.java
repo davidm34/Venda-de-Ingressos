@@ -1,19 +1,18 @@
 package org.example;
 
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * Controlador responsável pela interface de compra de ingressos.
+ * Gerencia eventos, traduções e interação com o modelo de dados.
+ *
+ * @author David Neves Dias
+ */
 public class BuyController {
 
     @FXML
@@ -46,43 +45,40 @@ public class BuyController {
     @FXML
     private Text purchaseMade;
 
-    private int ticketPrice = 100; // Preço fixo por ingresso
+    private final int ticketPrice = 100; // Preço fixo por ingresso
 
     private ResourceBundle bundle;
 
+    /**
+     * Método inicializador chamado automaticamente pelo JavaFX.
+     * Configura os componentes iniciais como Spinner, ComboBox e idioma padrão.
+     */
     @FXML
     public void initialize() {
-        // Configura o Spinner com valor inicial para evitar null
         numberOfTickets.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1));
-
-        // Configuração inicial do ComboBox de idiomas
         configureLanguageComboBox();
-
-        // Inicializa o idioma padrão (Português)
         atualizarIdioma(new Locale("pt", "BR"));
-
-        // Atualiza o preço dinamicamente conforme o número de ingressos
         numberOfTickets.valueProperty().addListener((observable, oldValue, newValue) -> updatePrice());
     }
 
+    /**
+     * Ação disparada ao clicar no botão de compra de ingressos.
+     * Verifica se o usuário está autenticado, adiciona os ingressos ao arquivo JSON e exibe uma notificação.
+     *
+     * @param event Evento do clique no botão.
+     */
     @FXML
     void buyTicketClick(ActionEvent event) {
         int selectedTickets = numberOfTickets.getValue() == null ? 1 : numberOfTickets.getValue();
-
-        // Obtem o ID do usuário autenticado
         String userId = SessionManager.getCurrentUserId();
         if (userId != null) {
             try {
-                // Adiciona os ingressos ao arquivo JSON
                 adicionarIngressosAoArquivo(userId, selectedTickets);
-
-                // Exibe a notificação
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle(bundle.getString("alerta.titulo"));
                 alert.setHeaderText(null);
                 alert.setContentText(bundle.getString("alerta.mensagem") + " " + selectedTickets + " " + bundle.getString("alerta.ingressos"));
                 alert.showAndWait();
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -91,25 +87,32 @@ public class BuyController {
         }
     }
 
+    /**
+     * Configura os detalhes do evento exibido na interface.
+     *
+     * @param evento Objeto representando os detalhes do evento.
+     */
     public void start(Evento evento) {
-        // Configura os textos do evento exibido
         nameEvent.setText(evento.getNome());
         dateEvent.setText(evento.formatDate());
-        updatePrice(); // Garante que o preço inicial esteja correto
+        updatePrice();
     }
 
+    /**
+     * Atualiza o preço total dinamicamente com base no número de ingressos selecionados.
+     */
     private void updatePrice() {
         int selectedTickets = numberOfTickets.getValue() == null ? 1 : numberOfTickets.getValue();
         int total = selectedTickets * ticketPrice;
         totalPrice.setText("$ " + total);
     }
 
+    /**
+     * Configura o ComboBox de idiomas, adicionando opções e listeners para detecção de mudanças.
+     */
     private void configureLanguageComboBox() {
-        // Adiciona os idiomas ao ComboBox
         languageComboBox.getItems().addAll("Português", "Inglês");
         languageComboBox.setValue("Português");
-
-        // Listener para detectar mudanças no ComboBox e alterar o idioma
         languageComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 if (newValue.equals("Inglês")) {
@@ -121,26 +124,33 @@ public class BuyController {
         });
     }
 
+    /**
+     * Atualiza os textos da interface de acordo com o idioma selecionado.
+     *
+     * @param locale Locale representando o idioma a ser aplicado.
+     */
     private void atualizarIdioma(Locale locale) {
-        // Atualiza o ResourceBundle para o idioma selecionado
         bundle = ResourceBundle.getBundle("lang", locale);
-
-        // Atualiza os textos exibidos na interface
         loginButton.setText(bundle.getString("botao.comprar"));
         textPriceTicket.setText(bundle.getString("label.preco_unitario"));
         textQuantity.setText(bundle.getString("label.quantidade"));
         textTotal.setText(bundle.getString("label.total"));
-
-        // Atualiza o preço total
         int selectedTickets = numberOfTickets.getValue() == null ? 1 : numberOfTickets.getValue();
         totalPrice.setText("$" + (selectedTickets * ticketPrice));
     }
 
+    /**
+     * Adiciona os ingressos comprados ao arquivo JSON associado ao usuário autenticado.
+     *
+     * @param userId ID do usuário autenticado.
+     * @param quantidadeIngressos Número de ingressos comprados.
+     * @throws IOException Se houver erro ao acessar ou salvar o arquivo.
+     */
     private void adicionarIngressosAoArquivo(String userId, int quantidadeIngressos) throws IOException {
         UsuarioManager usuarioManager = new UsuarioManager();
         List<Usuario> usuarios = usuarioManager.lerConteudoArquivo();
-        for(Usuario usuario: usuarios){
-            if(usuario.getId().equals(userId)){
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId().equals(userId)) {
                 usuarios.remove(usuario);
                 for (int i = 0; i < quantidadeIngressos; i++) {
                     UUID uuid = UUID.randomUUID();
