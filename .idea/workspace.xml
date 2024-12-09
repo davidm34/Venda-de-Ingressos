@@ -4,21 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="adicionando duas linguagens na tela de cadastro e login">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SessionManager.java" afterDir="false" />
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Assento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AssentoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Avaliacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AvaliacaoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardTestFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CommentTestFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Compra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CompraManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicketTestFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lang_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lang_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lang_pt_BR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lang_pt_BR.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventTestFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IngressoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PurchaseTestFacade.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
@@ -82,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ControllerScreens">
+  <component name="RunManager">
     <configuration name="ControllerScreens" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ControllerScreens" />
       <module name="main" />
@@ -96,65 +100,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.EventApplication" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.LoginApplication" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="vendaingressos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.RegisterApplication" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="vendaingressos.Usuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="vendaingressos.Usuario" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="vendaingressos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ControllerScreens" />
-        <item itemvalue="Application.RegisterApplication" />
-        <item itemvalue="Application.EventApplication" />
-        <item itemvalue="Application.LoginApplication" />
-        <item itemvalue="Application.vendaingressos.Usuario" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733665985820</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas">
+      <option name="closed" value="true" />
+      <created>1733709040705</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733709040706</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,6 +205,7 @@
     <MESSAGE value="finalização da tela de ingresso" />
     <MESSAGE value="integração de todas as telas" />
     <MESSAGE value="adicionando duas linguagens na tela de cadastro e login" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionando duas linguagens na tela de cadastro e login" />
+    <MESSAGE value="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas" />
+    <option name="LAST_COMMIT_MESSAGE" value="padronização do tamanho das telas e adicionado a opção de dois idiomas em todas as telas" />
   </component>
 </project>

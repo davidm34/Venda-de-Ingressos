@@ -26,7 +26,7 @@ public class ControllerScreens extends Application {
     public void start(Stage stage) throws IOException {
         ControllerScreens.stage = stage; // Atribuir o Stage à variável estática.
 
-        stage.setTitle("Venda de Ingressos!");
+        stage.setTitle("Ticket Sales!");
 
         // Carregar a Tela de Registro
         FXMLLoader fxmlLoader1 = new FXMLLoader(RegisterApplication.class.getResource("/org/example/main/register.fxml"));
