@@ -1,5 +1,4 @@
 package org.example;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,7 +6,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -75,6 +73,13 @@ public class RegisterController {
         languageComboBox.setValue("Português");
         updateLanguage("pt", "BR");
 
+        // Inicializar textos de erro como vazios
+        cpfNotFilledIn.setText("");
+        emailNotFilledIn.setText("");
+        nameNotFilledIn.setText("");
+        passwordNotFilledIn.setText("");
+
+        // Configurar ação do ComboBox
         languageComboBox.setOnAction(event -> {
             String selectedLanguage = languageComboBox.getValue();
             if ("Português".equals(selectedLanguage)) {
@@ -124,9 +129,12 @@ public class RegisterController {
             UUID uuid = UUID.randomUUID();
             String id = String.valueOf(uuid);
             boolean register = usuarioManager.adicionarUsuarioNoArquivo(name, password, cpf, email, false, id);
-            ControllerScreens.removeScene();
+            if (register) {
+                ControllerScreens.removeScene();
+            }
         }
     }
+
 
     @FXML
     void redirectLoginPage(ActionEvent event) {

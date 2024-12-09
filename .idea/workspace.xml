@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="integração de todas as telas">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lang_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lang_pt_BR.properties" afterDir="false" />
+    <list default="true" id="a7e2f0e0-2254-4dd8-95fe-32e5a531b61d" name="Changes" comment="adicionando duas linguagens na tela de cadastro e login">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SessionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BuyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllerScreens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ingresso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicketTestFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserTestFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lang_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lang_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lang_pt_BR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lang_pt_BR.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/buy.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/listOfEvents.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/main/register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.json" afterDir="false" />
@@ -51,30 +58,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ControllerScreens.executor": "Run",
-    "Application.EventApplication.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.LoginApp.executor": "Run",
-    "Application.LoginApplication.executor": "Run",
-    "Application.RegisterApplication.executor": "Run",
-    "Application.Usuario.executor": "Run",
-    "Application.org.example.HelloApplication.executor": "Run",
-    "Application.org.example.Usuario.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/david/OneDrive/Documentos/main/main/src/main/resources/org/example",
-    "last_opened_file_path": "C:/Users/david/OneDrive/Documentos/main/main/src/main/lib/javafx-sdk-23.0.1/lib/javafx.web.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ControllerScreens.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EventApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RegisterApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Usuario.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.Usuario.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/david/OneDrive/Documentos/main/main/src/main/resources/org/example&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/OneDrive/Documentos/main/main/src/main/lib/javafx-sdk-23.0.1/lib/javafx.web.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ControllerScreens">
     <configuration name="ControllerScreens" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ControllerScreens" />
@@ -223,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733619515854</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adicionando duas linguagens na tela de cadastro e login">
+      <option name="closed" value="true" />
+      <created>1733665985820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733665985820</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -233,6 +248,7 @@
     <MESSAGE value="criação da página de compra de ingresso e integração com a pagina de listagem de eventos" />
     <MESSAGE value="finalização da tela de ingresso" />
     <MESSAGE value="integração de todas as telas" />
-    <option name="LAST_COMMIT_MESSAGE" value="integração de todas as telas" />
+    <MESSAGE value="adicionando duas linguagens na tela de cadastro e login" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionando duas linguagens na tela de cadastro e login" />
   </component>
 </project>

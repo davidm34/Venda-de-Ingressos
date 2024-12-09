@@ -140,8 +140,8 @@ public class UserTestFacade {
      * @return O CPF do usuário ou null se não encontrado.
      * @throws IOException Se ocorrer um erro ao acessar os arquivos.
      */
-    public String getCpfByUserEmail(String email) throws IOException {
-        return getUserPropertyByEmail(email, "cpf");
+    public String getIdByUserEmail(String email) throws IOException {
+        return getUserPropertyByEmail(email, "id");
     }
 
     /**
@@ -274,8 +274,8 @@ public class UserTestFacade {
                         return usuario.getEmail();
                     case "password":
                         return usuario.getSenha();
-                    case "cpf":
-                        return usuario.getCpf();
+                    case "id":
+                        return usuario.getId();
                     default:
                         return null;
                 }

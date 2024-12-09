@@ -30,14 +30,14 @@ public class ControllerScreens extends Application {
 
         // Carregar a Tela de Registro
         FXMLLoader fxmlLoader1 = new FXMLLoader(RegisterApplication.class.getResource("/org/example/main/register.fxml"));
-        sceneRegister = new Scene(fxmlLoader1.load(), 833, 405);
+        sceneRegister = new Scene(fxmlLoader1.load(), 1024, 566);
         RegisterController registerController = fxmlLoader1.getController();
         registerController.setControllerScreens(this); // Passa a instância atual
 
 
         // Carregar a Tela de Login
         FXMLLoader fxmlLoader = new FXMLLoader(RegisterApplication.class.getResource("/org/example/main/login.fxml"));
-        sceneLogin = new Scene(fxmlLoader.load(), 833, 405);
+        sceneLogin = new Scene(fxmlLoader.load(), 1024, 566);
         LoginController loginController = fxmlLoader.getController();
 
         // Carregar a Tela de Compra
@@ -54,8 +54,8 @@ public class ControllerScreens extends Application {
         eventController.setBuyController(buyController);
 
         // Configurar cenas
-        sceneBuy = new Scene(buyRoot, 833, 405);
-        sceneEvents = new Scene(eventRoot, 833, 405);
+        sceneBuy = new Scene(buyRoot, 1024, 566);
+        sceneEvents = new Scene(eventRoot, 1024, 566);
 
         scenes.push(sceneBuy);
         scenes.push(sceneEvents);

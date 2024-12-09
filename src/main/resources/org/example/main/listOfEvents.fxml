@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -7,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="405.0" maxWidth="833.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="833.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.EventController">
+<BorderPane maxHeight="566.0" maxWidth="1024.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.EventController">
     <left>
         <AnchorPane prefHeight="407.0" prefWidth="235.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="405.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="600.0" fitWidth="379.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../image4.jpg" />
                     </image>
@@ -20,15 +21,16 @@
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="410.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="485.0" prefWidth="670.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableEvent" prefHeight="405.0" prefWidth="566.0">
+            <TableView fx:id="tableEvent" prefHeight="566.0" prefWidth="446.0">
               <columns>
-                <TableColumn fx:id="nameEvent" prefWidth="144.79999387264252" text="NOME" />
-                <TableColumn fx:id="dateEvent" prefWidth="128.80001831054688" text="DATA" />
-                  <TableColumn fx:id="categoryEvent" prefWidth="159.99996948242188" text="CATEGORIA" />
+                <TableColumn fx:id="nameEvent" prefWidth="131.19995498657227" text="NOME" />
+                <TableColumn fx:id="dateEvent" prefWidth="111.19993591308594" text="DATA" />
+                  <TableColumn fx:id="categoryEvent" prefWidth="120.79998779296875" text="CATEGORIA" />
               </columns>
             </TableView>
+            <ComboBox fx:id="languageComboBox" layoutX="478.0" layoutY="1.0" prefHeight="26.0" prefWidth="138.0" />
          </children>
         </AnchorPane>
     </center>

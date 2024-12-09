@@ -42,9 +42,19 @@ public class LoginController {
     @FXML
     private ComboBox<String> languageComboBox;
 
-    private ResourceBundle bundle;
+    @FXML
+    private Label textPriceTicket;
 
-    private static final String USERS_FILE = "usuarios.json";
+    @FXML
+    private Label textQuantity;
+
+    @FXML
+    private Label textTotal;
+
+    @FXML
+    private Text totalPrice;
+
+    private ResourceBundle bundle;
 
     private ControllerScreens controllerScreens;
 
@@ -54,11 +64,14 @@ public class LoginController {
 
     @FXML
     public void initialize() {
-        // Configuração inicial do ComboBox de idiomas
+        // Configurar opções de idiomas no ComboBox
         languageComboBox.getItems().addAll("Português", "English");
-        languageComboBox.setValue("Português");
+        languageComboBox.setValue("Português"); // Idioma padrão
+
+        // Atualizar idioma para o padrão inicial
         updateLanguage("pt", "BR");
 
+        // Configurar listener para mudanças no ComboBox de idioma
         languageComboBox.setOnAction(event -> {
             String selectedLanguage = languageComboBox.getValue();
             if ("Português".equals(selectedLanguage)) {
@@ -67,49 +80,59 @@ public class LoginController {
                 updateLanguage("en", "US");
             }
         });
+
+        // Inicializar textos de erro como vazios
+        emailNotFilledIn.setText("");
+        passwordNotFilledIn.setText("");
     }
 
+    @FXML
     public void onHelloButtonClick(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText();
         String password = enterPasswordField.getText();
+
+        // Validar campos preenchidos
         boolean check = checkIfThereIsNoEmptyField(username, password);
         if (check) {
+            // Validar credenciais
             if (validateLogin(username, password)) {
+                UserTestFacade userTestFacade = new UserTestFacade();
+                String id = userTestFacade.getIdByUserEmail(username);
+                SessionManager.login(id); // Armazena o ID do usuário na sessão
                 controllerScreens.removeScene();
             } else {
-                validateLogin.setText("Usuário ou senha inválidos.");
+                validateLogin.setText(bundle.getString("error.invalidCredentials"));
             }
         }
     }
 
     private boolean validateLogin(String email, String password) throws IOException {
-
         UsuarioManager usuarioManager = new UsuarioManager();
         List<Usuario> usuarios = usuarioManager.lerConteudoArquivo();
+
         for (Usuario usuario : usuarios) {
             if (usuario.getEmail().equals(email) && usuario.getSenha().equals(password)) {
                 return true;
             }
         }
         return false;
-
     }
 
-    private boolean checkIfThereIsNoEmptyField(String email, String password){
+    private boolean checkIfThereIsNoEmptyField(String email, String password) {
         boolean allFieldsFilled = true;
 
         if (email == null || email.trim().isEmpty()) {
-            emailNotFilledIn.setText("Campo não Preenchido");
+            emailNotFilledIn.setText(bundle.getString("error.emailNotFilledIn"));
             allFieldsFilled = false;
         } else {
-            emailNotFilledIn.setText(""); // Limpa o texto de erro
+            emailNotFilledIn.setText(""); // Limpar mensagem de erro
         }
 
         if (password == null || password.trim().isEmpty()) {
-            passwordNotFilledIn.setText("Campo não Preenchido");
+            passwordNotFilledIn.setText(bundle.getString("error.passwordNotFilledIn"));
             allFieldsFilled = false;
         } else {
-            passwordNotFilledIn.setText(""); // Limpa o texto de erro
+            passwordNotFilledIn.setText(""); // Limpar mensagem de erro
         }
 
         return allFieldsFilled;
@@ -119,20 +142,16 @@ public class LoginController {
         Locale locale = new Locale(language, country);
         bundle = ResourceBundle.getBundle("lang", locale);
 
-        // Atualizar os textos da interface
-        emailNotFilledIn.setText(bundle.getString("error.emailNotFilledIn"));
-        passwordNotFilledIn.setText(bundle.getString("error.passwordNotFilledIn"));
-
-        // Atualizar os textos de especificação de campo
+        // Atualizar textos exibidos na interface
         emailId.setText(bundle.getString("label.emailId"));
         passwordId.setText(bundle.getString("label.passwordId"));
-
-        // Atualizar placeholders dos campos de texto
         enterPasswordField.setPromptText(bundle.getString("placeholder.password"));
         usernameTextField.setPromptText(bundle.getString("placeholder.email"));
-
-        // Atualizar textos de botões
         loginButton.setText(bundle.getString("button.login"));
-    }
 
+        // Atualizar mensagens de validação
+        validateLogin.setText("");
+        emailNotFilledIn.setText("");
+        passwordNotFilledIn.setText("");
+    }
 }
